@@ -1,0 +1,50 @@
+{"system": "你是一名 Java 面试官。", "input": "Kafka 的副本机制是什么？", "output": "每个 Partition 有多个 Replica，一个 Leader 负责读写，Follower 异步拉取同步数据。"}
+{"system": "你是一名并发专家。", "input": "DelayQueue 用途是什么？", "output": "存储带延迟元素，实现延时任务，如订单超时、延迟消息。"}
+{"system": "你是一名 Java 面试官。", "input": "什么时候需要破坏双亲委派？", "output": "SPI（如 JDBC）、类热替换、插件系统等场景。"}
+{"system": "你是一名并发专家。", "input": "什么是 guarded suspension？", "output": "守护挂起模式，线程等待某条件满足再执行，例如通过 wait/notify 实现。"}
+{"system": "你是一名并发专家。", "input": "CountDownLatch 用来做什么？", "output": "多个线程等待其他任务完成，计数减到 0 时触发继续执行。不可重置。"}
+{"system": "你是一名专业 Java 面试官。", "input": "为什么 JDK8 把永久代改成元空间？", "output": "永久代易导致 OOM 且难以垃圾回收；元空间使用本地内存，提高灵活性，减少类元数据溢出风险。"}
+{"system": "你是一名系统设计专家。", "input": "如何设计高可用缓存系统？", "output": "多副本、主从同步、多级缓存（本地缓存+Redis）、一致性哈希、自动扩容、热点隔离。"}
+{"system": "你是一名 Java 面试官。", "input": "Redis 的内存淘汰依据是什么？", "output": "根据 key 的 TTL、访问频率、访问次数等统计决定淘汰策略。"}
+{"system": "你是一名并发专家。", "input": "什么是临界区？", "output": "访问共享资源的代码块，必须通过同步保护避免竞态。"}
+{"system": "你是一名 Java 面试官。", "input": "@Component、@Service、@Repository、@Controller 有什么区别？", "output": "均为组件注解。@Service 表示业务逻辑层；@Repository 表示数据访问层且能捕获数据库异常；@Controller 表示 Web 层；@Component 泛用。"}
+{"system": "你是一名 Java 面试官。", "input": "G1 为什么比 CMS 更好？", "output": "避免碎片、可预测停顿、分区管理简化回收策略。"}
+{"system": "你是一名专业面试官。", "input": "Redis 与 ZooKeeper 分布式锁的区别？", "output": "Redis 性能高但一致性弱；ZooKeeper 一致性强但性能稍低。高吞吐用 Redis，高可靠性用 ZK。"}
+{"system": "你是一名专业 Java 面试官。", "input": "String 常量池是什么？", "output": "常量池存放编译期确定的字符串字面量，减少重复对象，提升性能。使用 String.intern() 可将运行时字符串加入常量池。"}
+{"system": "你是一名 Java 面试官。", "input": "MySQL 的锁有哪些类型？", "output": "包括共享锁（S）、排他锁（X）、意向锁、间隙锁、临键锁、记录锁。"}
+{"system": "你是一名专业 Java 面试官。", "input": "什么是 Java 的多态？", "output": "多态存在于父类引用指向子类对象。表现为编译看左边，运行看右边。通过方法重写实现运行时动态分派，提高扩展性。"}
+{"system": "你是一名专业的Java后端面试官，请针对 JVM/JMM/GC 主题给出结构化、专业回答。", "input": "什么是 JVM？", "output": "JVM（Java Virtual Machine）是 Java 程序运行的虚拟机，负责类加载、字节码执行、内存管理、垃圾回收等功能，实现 Java 的跨平台能力。"}
+{"system": "你是一名 Java 面试官。", "input": "Java 中 clone() 的作用是什么？", "output": "clone 实现对象拷贝，默认是浅拷贝。需实现 Cloneable 接口，否则抛异常。深拷贝需手工实现或序列化。"}
+{"system": "你是一名 Java 面试官。", "input": "MySQL 分库分表如何设计？", "output": "常用水平分表、垂直拆分、使用雪花算法生成唯一 ID。通过中间件如 ShardingSphere 或 Mycat 路由。"}
+{"system": "你是一名并发专家。", "input": "什么是 LongAdder？", "output": "高并发累加器，通过分散热点到多个 Cell 再合并，提高竞争环境下吞吐量。"}
+{"system": "你是一名专家。", "input": "如何避免僵尸进程？", "output": "父进程调用 wait/waitpid 或使用 SIGCHLD 信号处理回收子进程。"}
+{"system": "你是一名 Java 面试官。", "input": "Spring 三级缓存解决循环依赖原理是什么？", "output": "一级缓存：singletonObjects；二级缓存：earlySingletonObjects；三级缓存：singletonFactories。三级缓存提供原始对象工厂，打破代理与实例化顺序冲突。"}
+{"system": "你是一名 Java 面试官。", "input": "什么是 Spring MVC？", "output": "Spring MVC 是 Spring 的 Web 框架，采用前端控制器 DispatcherServlet，处理请求分发、视图解析、参数绑定、异常处理等。"}
+{"system": "你是一名 Java 面试官。", "input": "如何查看 GC 日志？", "output": "添加 JVM 参数，如 -Xlog:gc*，并分析 GC 周期、停顿时间、回收效果。"}
+{"system": "你是一名操作系统专家。", "input": "什么是 mmap？", "output": "mmap 将文件映射到内存空间，提高文件访问速度，实现零拷贝。"}
+{"system": "你是一名专业架构师。", "input": "系统如何监控？", "output": "包含指标监控（Prometheus）、日志监控（ELK）、链路追踪（Zipkin/SkyWalking）、告警系统。"}
+{"system": "你是一名 Java 面试官。", "input": "MyBatis 的核心组件有哪些？", "output": "包括 SqlSessionFactory、SqlSession、Mapper 映射器、Executor、StatementHandler、ParameterHandler、ResultSetHandler。"}
+{"system": "你是一名 Java 面试官。", "input": "Optional 可能带来什么问题？", "output": "过度使用会增加对象创建开销，不适合在字段中使用。"}
+{"system": "你是一名分布式专家。", "input": "什么是负载均衡？为什么需要？", "output": "负载均衡将请求分发到多个服务实例，提高吞吐量、高可用与扩展性。可以是客户端、服务端或全局代理模式。"}
+{"system": "你是一名 Java 面试官。", "input": "Java 中如何生成随机数？", "output": "使用 ThreadLocalRandom、SecureRandom、Random 等。SecureRandom 更安全。"}
+{"system": "你是一名 Java 面试官。", "input": "ArrayList 和 LinkedList 的区别？", "output": "ArrayList 基于动态数组，随机访问快；LinkedList 基于双向链表，插入删除快。随机访问使用 ArrayList。"}
+{"system": "你是一名 Java 面试官。", "input": "什么是 Spring Boot？", "output": "Spring Boot 是 Spring 的快速开发框架，提供自动装配、约定优于配置、内嵌服务器、Starter 依赖管理，简化开发流程。"}
+{"system": "你是一名专业面试官。", "input": "UUID 为什么不适合作数据库主键？", "output": "UUID 随机性强，会造成：1）索引碎片严重；2）不利于 B+Tree 局部性；3）占用空间大；4）不易排序。"}
+{"system": "你是一名专业 Java 面试官。", "input": "什么是 JVM 分代设计？", "output": "堆按对象生命周期划分，提高 GC 效率：新生代（Eden、Survivor）、老年代。"}
+{"system": "你是一名 Java 面试官。", "input": "什么是 CAS？", "output": "比较并交换（Compare And Swap），无锁算法基础。问题包括 ABA、循环开销、只能操作单变量。"}
+{"system": "你是一名 OS 面试官。", "input": "什么是自旋锁？", "output": "自旋锁忙等待，不释放 CPU。适用于锁持有时间短的场景。"}
+{"system": "你是一名 Java 面试官。", "input": "什么是枚举 enum？", "output": "定义固定常量集合，是类的特殊形式，线程安全，适合实现单例。"}
+{"system": "你是一名网络通信专家。", "input": "ARP 协议作用是什么？", "output": "ARP 通过广播获取 IP 对应的 MAC 地址，用于同一局域网的通信。"}
+{"system": "你是一名专业面试官。", "input": "什么是三地三中心？", "output": "分布式部署三地（主、备、容灾）三中心，支持跨地域容灾，保证业务连续性。"}
+{"system": "你是一名 Java 面试官。", "input": "Kafka 的 ACK 策略有哪些？", "output": "acks=0（不等待）、acks=1（leader）、acks=all（leader+ISR 副本）。acks=all 最安全。"}
+{"system": "你是一名架构师。", "input": "如何设计推荐系统 AB 测试平台？", "output": "流量分组、参数配置、监控指标、实验调度、数据统计。需要保证隔离与容量。"}
+{"system": "你是一名 JUC 专家。", "input": "什么是 Work-Stealing？", "output": "空闲线程会窃取其他线程队列中的任务，提高 CPU 利用率，避免负载不均。"}
+{"system": "你是一名 Java 面试官。", "input": "如何查看内存使用情况？", "output": "使用 jmap、jstat、VisualVM、MAT 工具。"}
+{"system": "你是一名操作系统面试官。", "input": "线程是什么？", "output": "线程是 CPU 调度的单位，共享进程资源，轻量级，适合并发任务。"}
+{"system": "你是一名 JUC 面试官。", "input": "什么是 CLH 队列？", "output": "AQS 使用的双向 FIFO 队列，线程排队等待锁，避免忙等待，提高性能。"}
+{"system": "你是一名 Java 面试官。", "input": "什么是晋升失败？", "output": "Survivor 区或老年代空间不足，导致存活对象无法晋升，触发 Full GC。"}
+{"system": "你是一名 Java 面试官。", "input": "MySQL 为什么会主从延迟？", "output": "由于 IO 压力大、执行能力弱、单线程复制导致从库落后主库。"}
+{"system": "你是一名 Java 面试官。", "input": "Spring Boot 如何集成外部容器？", "output": "通过打包 WAR 或将 Spring Boot 嵌入式 Tomcat 替换为外部 Tomcat 部署。"}
+{"system": "你是一名并发专家。", "input": "volatile 能解决指令重排吗？", "output": "是，通过加入 StoreLoad、LoadLoad 等内存屏障禁止关键重排序。"}
+{"system": "你是一名 Java 面试官。", "input": "什么是 Spring Cloud Config？", "output": "配置中心，用于统一配置管理，支持热更新、版本控制。"}
+{"system": "你是一名 Java 面试官。", "input": "为什么要使用双亲委派模型？", "output": "确保核心类库不被篡改；避免类重复加载，提高系统稳定性。"}
