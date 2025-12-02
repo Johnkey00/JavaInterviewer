@@ -42,10 +42,10 @@ def shuffle_txt(input_path, output_path):
 
 # 示例
 if __name__ == "__main__":
-    # input_file = "java_interview.jsonl"
-    # output_file = "java_interview_shuffled.jsonl"
+    input_file = "java_interview_shuffled.jsonl"
+    output_file = "java_interview_shuffled_new.jsonl"
 
-    # shuffle_jsonl(input_file, output_file)
-    input_file = "test_questions.txt"
-    output_file = "test_questions_shuffled.txt"
-    shuffle_txt(input_file, output_file)
+    shuffle_jsonl(input_file, output_file)
+    # input_file = "test_questions.txt"
+    # output_file = "test_questions_shuffled.txt"
+    # shuffle_txt(input_file, output_file)
